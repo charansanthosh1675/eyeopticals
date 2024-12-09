@@ -18,7 +18,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security Settings
 SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-=_b&o2g6m(gmodnk&y+rhk&-$5@k!9hrz1_@$u8u3x)azr(47p")
 DEBUG = os.getenv("DEBUG", "False") == "True"
-ALLOWED_HOSTS = ["your-app-name.onrender.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ['eyeopticals-ecommers.onrender.com']
+
 
 # Application Definition
 INSTALLED_APPS = [
@@ -100,7 +101,7 @@ LOGIN_REDIRECT_URL = 'product_list'
 LOGOUT_REDIRECT_URL = 'login'
 
 # Security and Deployment Settings
-CSRF_TRUSTED_ORIGINS = ['https://your-app-name.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://eyeopticals-ecommers.onrender.com']
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True

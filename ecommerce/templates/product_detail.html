@@ -1,14 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="card mt-5">
-    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-    <div class="card-body">
-        <h1 class="card-title">{{ product.name }}</h1>
-        <p class="card-text"><strong>Description:</strong> {{ product.description }}</p>
-        <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
-        <p class="card-text"><strong>Stock:</strong> {{ product.stock }}</p>
-        <a href="{% url 'product_list' %}" class="btn btn-secondary mt-3">Back to Product List</a>
+<div class="container mt-5">
+    <h1>{{ product.name }}</h1>
+    <div class="row">
+        <!-- Product Image -->
+        <div class="col-md-6">
+            <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-md-6">
+            <h2>${{ product.price }}</h2>
+            <p><strong>Description:</strong> {{ product.description }}</p>
+            <p><strong>Stock:</strong> {{ product.stock }}</p>
+
+            <!-- Add to Cart Form -->
+            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success">Add to Cart</button>
+            </form>
+
+            <!-- Back to Product List Button -->
+            <a href="{% url 'product_list' %}" class="btn btn-secondary mt-3">Back to Product List</a>
+        </div>
     </div>
 </div>
 {% endblock %}

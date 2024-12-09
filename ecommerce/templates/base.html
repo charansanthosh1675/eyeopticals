@@ -20,6 +20,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'product_list' %}">Products</a>
                 </li>
+
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'order_history' %}">Order History</a>
@@ -60,9 +61,32 @@
     {% block content %}{% endblock %}
 </div>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-3 mt-5">
-    &copy; 2024 Eye Opticals | All Rights Reserved
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>Email: support@eyeopticals.com</p>
+                <p>Phone: +1-800-123-4567</p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" class="text-white"><i class="fab fa-twitter"></i> Twitter</a>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Location</h5>
+                <p>123 Main Street, City, Country</p>
+                <p>Mon - Fri: 9AM - 7PM</p>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <p class="mb-0">&copy; 2024 Eye Opticals. All Rights Reserved.</p>
+    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
